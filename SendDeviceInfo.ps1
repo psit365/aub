@@ -42,5 +42,3 @@ if (Test-Path $outputPath) {
 
     & "$PSScriptRoot\Sysprep.cmd"
 }
-
-Pause
