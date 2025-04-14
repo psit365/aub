@@ -7,8 +7,8 @@ Get-Process sysprep | Stop-Process -ErrorAction SilentlyContinue
 # get computer info
 $BiosDetail = Get-CimInstance Win32_BIOS
 
-Install-Script Get-WindowsAutopilotInfo -Scope CurrentUser -Force -Confirm:$false
-Install-Module WindowsAutopilotIntune -Scope CurrentUser -Force -Confirm:$false
+Install-Script Get-WindowsAutopilotInfo -Force -Confirm:$false
+Install-Module WindowsAutopilotIntune -Force -Confirm:$false
 
 $outputPath = Join-Path $PSScriptRoot -ChildPath ('{0}.csv' -f $BiosDetail.SerialNumber)
 Get-WindowsAutopilotInfo.ps1 -OutputFile $outputPath -GroupTag 'Dedicated' 
